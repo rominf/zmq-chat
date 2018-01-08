@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import argparse
 import configparser
 import curses
@@ -88,7 +90,7 @@ def main(stdscr):
     # and one for showing the message the user is about to send off
     top_pad = stdscr.subpad(division_line, window_width, 0, 0)
     bottom_pad = stdscr.subpad(window_height - division_line, window_width, division_line, 0)
-    
+
     top_thread = threading.Thread(target=start_top_window, args=(top_pad, display_receiver))
     top_thread.daemon = True
     top_thread.start()

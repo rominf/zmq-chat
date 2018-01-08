@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import argparse
 import configparser
 import zmq
@@ -64,7 +66,7 @@ if '__main__' == __name__:
         config = configparser.ConfigParser()
         config.read(config_file)
         config = config['default']
-                                
+
         server = Server('*', config['chat_port'], '*', config['display_port'])
         server.start_main_loop()
     except KeyboardInterrupt:
